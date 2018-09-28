@@ -11,10 +11,7 @@ class DefaultController extends Controller
     /**
      * @Route("/", name="homepage")
      */
-<<<<<<< HEAD
 
-=======
->>>>>>> a7789a83de335bbfdfc44ed66199769cf451b3f9
     public function indexAction(Request $request)
     {
         // replace this example code with whatever you need
@@ -22,7 +19,7 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
     }
-<<<<<<< HEAD
+
 
    /**
      * @Route("/scoreboard/input", name="scoreboard")
@@ -34,11 +31,10 @@ class DefaultController extends Controller
 	    'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
 	]);
    }
-}
+
    
-=======
     /**
-     * @Route("/scoreboard/view", name="scoreboard")
+     * @Route("/scoreboard/view", name="scoreboard_v")
      */
     public function scoreboardViewAction(Request $request){
 	// replace this example code with whatever you need
@@ -47,4 +43,4 @@ class DefaultController extends Controller
         ]);
     }
 }
->>>>>>> a7789a83de335bbfdfc44ed66199769cf451b3f9
+
