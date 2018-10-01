@@ -27,9 +27,7 @@ class DefaultController extends Controller
      */
    public function scoreboardInputAction(Request $request)
    {
-	return $this->render('scoreboard/input.html.twig', [
-	    'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-	]);
+	return $this->render('@App/Scoreboard/input.html.twig');
    }
 
    
@@ -38,9 +36,7 @@ class DefaultController extends Controller
      */
     public function scoreboardViewAction(Request $request){
 	// replace this example code with whatever you need
-        return $this->render('scoreboard/view.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        return $this->render('@App/Scoreboard/view.html.twig');
     }
 }
 
