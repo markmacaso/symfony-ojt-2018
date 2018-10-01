@@ -22,7 +22,7 @@ class DefaultController extends Controller
 
 
    /**
-     * @Route("/scoreboard/input", name="scoreboard")
+     * @Route("/scoreboard/input", name="scoreboard_i")
      *
      */
    public function scoreboardInputAction(Request $request)
@@ -38,5 +38,10 @@ class DefaultController extends Controller
 	// replace this example code with whatever you need
         return $this->render('@App/Scoreboard/view.html.twig', ['title' => 'Scoreboard View']);
     }
-}
 
+   /**
+    * @Route("/scoreboard", name="scoreboard")
+    */
+    public function scoreboardIndexAction(Request $request){
+	return $this->render('@App/Scoreboard/index.html/twig',['title' => 'Scoreboard Home']);
+}
