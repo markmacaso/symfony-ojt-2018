@@ -27,7 +27,7 @@ class DefaultController extends Controller
      */
    public function scoreboardInputAction(Request $request)
    {
-	return $this->render('@App/Scoreboard/input.html.twig');
+	return $this->render('@App/Scoreboard/input.html.twig', ['title' => 'Scoreboard Input']);
    }
 
    
@@ -36,7 +36,7 @@ class DefaultController extends Controller
      */
     public function scoreboardViewAction(Request $request){
 	// replace this example code with whatever you need
-        return $this->render('@App/Scoreboard/view.html.twig');
+        return $this->render('@App/Scoreboard/view.html.twig', ['title' => 'Scoreboard View']);
     }
 }
 

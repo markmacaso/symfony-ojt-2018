@@ -1,24 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Scoreboard</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-	<style>
-		.title{
-			font-size: 30px;
-		}
-		.container{
-			padding: 15px;
-			margin: auto;
-		}
-		.align-center{
-			text-align:center;
-		}
-	</style>
-</head>
-<body>
-	<div class="container col-md-6 offset-md-3">
+
+{% extends '@App/Scoreboard/base.html.twig' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/css/Scoreboard/view.css"/>
+{% endblock %}
+
+
+{% block body %}
+	<div class="col-md-6 offset-md-3">
 		<div class="card card-default bg-dark text-white">
 			<div class="card-header align-center title">
 				Scoreboard View
@@ -38,5 +27,4 @@
 			</div>
 		</div>
 	</div>
-</body>
-</html>
+{% endblock %}
