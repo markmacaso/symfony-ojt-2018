@@ -43,6 +43,6 @@ class DefaultController extends Controller
     * @Route("/scoreboard", name="scoreboard")
     */
     public function scoreboardIndexAction(Request $request){
-	return $this->render('@App/Scoreboard/index.html/twig',['title' => 'Scoreboard Home']);
+	return $this->render('@App/Scoreboard/index.html.twig',['title' => 'Scoreboard Home']);
     }
 }
