@@ -1,10 +1,44 @@
 .title{
-			font-size: 30px;
-		}
-		.container{
-			padding: 15px;
-			margin: auto;
-		}
-		.align-center{
-			text-align:center;
-		}
+    font-size: 30px;
+}
+.container{
+    padding: 15px;
+    margin: auto;
+}
+.align-center{
+    text-align:center;
+}
+
+table{
+    
+    background-color: black;
+    width:500px;
+    height: 400px;
+}
+
+th{
+    font-size:25px;
+}
+
+th, td{
+    text-align:center;
+}
+
+.white{
+    color:white;
+}
+
+.green{
+    color:green;
+    font-size:40px;
+}
+
+.yellow{
+    color:yellow;
+    font-size:30px;
+}
+.red{
+    color:red;
+    font-size:30px;
+}
+

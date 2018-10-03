@@ -12,19 +12,52 @@
 			<div class="card-header align-center title">
 				Scoreboard View
 			</div>
-			<div class="card-body">
-				<div class="row align-center">
-					<div class="col-md-4">
-						HOME
-					</div>
-					<div class="col-md-4">
-						TIME
-					</div>
-					<div class="col-md-4">
-						GUEST
-					</div>
-				</div>
+			<div>
+				<table align="center">
+					    <tr class="white">
+					        <th>HOME</th>
+				  	        <th class="red"><div style="border:1px solid white">08:29</div></th>
+					        <th>GUEST</th>
+					    </tr>
+
+					    <tr class="green">
+					        <td>107</td>
+					        <td></td>
+					        <td>106</td>
+					    </tr>
+		
+					    <tr>
+					        <td colspan = 4 class="white" >PERIOD </td>
+					    </tr>
+					    <tr style="border-bottom: solid 1px white" class="white" >
+					        <td><li>BONUS</li></td>
+					        <td>POSS</td>
+					        <td>BONUS</td>
+					    </tr>
+
+					    <tr class="white">
+					        <td>FOULS</td>
+					        <td>SHOT CLOCK</td>
+					        <td>FOULS</td>
+					    </tr>
+
+					    <tr>
+					        <td class="yellow">03</td>
+					        <td class="red">:17</td>
+					        <td class="yellow">05</td>
+					   </tr>
+
+				</table>
 			</div>
 		</div>
 	</div>
+
+    <div class="text-center align-content-center w-100">
+        <div class="divider">&nbsp;</div>
+	<span class="align-middle">
+	    <a role="button" href="/scoreboard" class="btn btn-primary" style="width:200px">Home</a>
+            <a role="button" href="/scoreboard/input" class="btn btn-primary" style="width:200px" >Input</a>
+        </span>
+    </div>
+
 {% endblock %}
