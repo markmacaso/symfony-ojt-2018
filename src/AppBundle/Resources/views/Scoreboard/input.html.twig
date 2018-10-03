@@ -3,33 +3,70 @@
     	<div class="py-5 text-center">
 	    <h2 style="font-family: Raleway">Scoreboard Input</h2>
 	</div>
-	<div class="row" style="padding-left: 385px">
-	    <div class="col-sm-2 btn-group-vertical" role="group">
-	    	<input type="number" class="form-control"><p id="p">0</p>
-		<button type="button" class="btn btn-outline-primary" id="home">Home</button>
-	    	<button type="button" class="btn btn-outline-primary" id="home3" onclick="add3()">Home +3</button>
-	    	<button type="button" class="btn btn-outline-primary" id="home2" onclick="add2()">Home +2</button>
-	    	<button type="button" class="btn btn-outline-primary" id="home1" onclick="add1()">Home +1</button>
-		<button type="button" class="btn btn-outline-primary" id="homemin" onclick="min()">Home -</button>
+	<div class="row">
+	    <div class="col-sm-12 col-md-8 offset-md-2">
+    	    <div class="col-sm-4 btn-group-vertical float-left team" role="group" data-team_id="{{ teams[0].id }}">
+	        	<div>
+                    <span class="span-team-name">{{ teams[0].name }}</span>: <span class="span-team-score">{{ teams[0].score }}</span>
+                </div>
+                <div class="divider">
+                    &nbsp;
+                </div>
+	        	<div>
+	        	    <input type="number" class="form-control text-score-input">
+		            <button type="button" class="btn btn-outline-primary btn-set-score">Set Score</button>
+	        	</div>
+                <div class="divider">&nbsp;</div>
+    	    	<button type="button" class="btn btn-outline-primary btn-add-points" data-points="3">+3 Points</button>
+	        	<button type="button" class="btn btn-outline-primary btn-add-points" data-points="2">+2 Points</button>
+	        	<button type="button" class="btn btn-outline-primary btn-add-points" data-points="1">+1 Point</button>
+        		<button type="button" class="btn btn-outline-primary btn-minus-points" data-points="1">-1 Point</button>
     	    </div>
-	    <div class="col-sm-3 order-1 btn-group-vertical" role="group">
-		<input type="text" class="form-control">
-	    	<button type="button" class="btn btn-outline-primary">Set Timer</button>
-	    	<button type="button" class="btn btn-outline-primary">Start</button>
-	    	<button type="button" class="btn btn-outline-primary">Stop</button>
-		<button type="button" class="btn btn-outline-primary">Poss Arrow</button>
-	    </div>
-	    <div class="col-sm-2 order-12 btn-group-vertical" role="group">
-		<input type="text" class="form-control"><p id="p">0</p>
-		<button type="button" class="btn btn-outline-primary">Guest</button>
-		<button type="button" class="btn btn-outline-primary" onclick="add3()">Guest +3</button>
-		<button type="button" class="btn btn-outline-primary">Guest +2</button>
-		<button type="button" class="btn btn-outline-primary">Guest +1</button>
-		<button type="button" class="btn btn-outline-primary">Guest -</button>
+	        <div class="col-sm-4 btn-group-vertical float-left timer" role="group" data-minutes="{{ timer.minutes }}" data-seconds="{{ timer.seconds }}" data-milliseconds="{{ timer.milliseconds }}">
+                <div>
+                    Timer: <span class="span-game-timer"></span>
+                </div>
+                <div class="divider">&nbsp;</div>
+                <div>
+                    <div class="row">
+                        <div class="col-sm-4" style="padding-right: 6px;">
+	        	            <input type="number" class="form-control game-timer-minute-input" min="0" max="10"/>
+                        </div>
+                        <div class="col-sm-4" style="padding-right: 10px; padding-left: 10px;" min="0" max="59">
+	        	            <input type="number" class="form-control game-timer-seconds-input"/>
+                        </div>
+                        <div class="col-sm-4" style="padding-left: 5px;" min="0" max="9">
+	        	            <input type="number" class="form-control game-timer-milliseconds-input"/>
+                        </div>
+                    </div>
+		            <button type="button" class="btn btn-outline-primary btn-set-timer">Set Timer</button>
+                </div>
+                <div class="divider">&nbsp;</div>
+	    	    <button type="button" class="btn btn-outline-primary btn-start-timer">Start</button>
+    	    	<button type="button" class="btn btn-outline-primary btn-stop-timer">Stop</button>
+	        	<button type="button" class="btn btn-outline-primary">Poss Arrow</button>
+    	    </div>
+	        <div class="col-sm-4 btn-group-vertical float-left team" role="group" data-team_id="{{ teams[1].id }}">
+	        	<div>
+                    <span class="span-team-name">{{ teams[1].name }}</span>: <span class="span-team-score">{{ teams[1].score }}</span>
+                </div>
+                <div class="divider">&nbsp;</div>
+	        	<div>
+	        	    <input type="number" class="form-control text-score-input">
+		            <button type="button" class="btn btn-outline-primary btn-set-score">Set Score</button>
+	        	</div>
+                <div class="divider">&nbsp;</div>
+    	    	<button type="button" class="btn btn-outline-primary btn-add-points" data-points="3">+3 Points</button>
+	        	<button type="button" class="btn btn-outline-primary btn-add-points" data-points="2">+2 Points</button>
+	        	<button type="button" class="btn btn-outline-primary btn-add-points" data-points="1">+1 Point</button>
+        		<button type="button" class="btn btn-outline-primary btn-minus-points" data-points="1">-1 Point</button>
+    	    </div>
 	    </div>
 	</div>
 {% endblock %}
 
 {% block javascript %}
+    <script src="/js/Scoreboard/input-main.js"></script>
     <script src="/js/Scoreboard/input.js"></script>
+    <script src="/js/Scoreboard/timer.js"></script>
 {% endblock %}
