@@ -1,0 +1,31 @@
+{% extends '@App/base.html.twig' %}
+
+{% block body %}
+    <div class="py-5 text-center">
+        <h2>Players</h2>
+	</div>
+    {% include '@App/alert.html.twig' %}
+	<div class="row">
+	    <div class="col-sm-12">
+            <a href="{{ path('player_create') }}" class="btn btn-primary">Add Player</a>
+            <ul class="list-group mt-3">
+                {% for player in players %}
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                {{ loop.index }}.  {{ player.lastName }}, {{ player.firstName }}
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="{{ path('player_edit') }}" class="btn btn-default">Edit</a>
+                                <a href="{{ path('player_delete', { id : player.id }) }}" class="btn btn-default">Delete</a>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+	    </div>
+	</div>
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

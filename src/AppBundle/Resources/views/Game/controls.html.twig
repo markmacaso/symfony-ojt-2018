@@ -1,0 +1,65 @@
+{% extends '@App/base.html.twig' %}
+
+{% block body %}
+    <div class="py-5 text-center">
+        <h2 style="font-family: Raleway">Game Controls</h2>
+	</div>
+    {% include '@App/alert.html.twig' %}
+	<div class="row">
+	    <div class="col-sm-12">
+            {%
+                include '@App/Game/controls-team.html.twig' with {
+                    team : game.homeTeam,
+                    score: game.scores[game.homeTeam.id],
+                }
+            %}
+	        <div class="col-sm-4 btn-group-vertical float-left timer" role="group" data-period="{{ timer.period }}" data-minutes="{{ timer.minutes }}" data-seconds="{{ timer.seconds }}" data-milliseconds="{{ timer.milliseconds }}">
+                <div>
+                    <h2>
+                        Timer <span class="badge badge-secondary span-game-timer"></span>
+                    </h2>
+                    <h3>
+                        Period <span class="badge badge-secondary span-game-period">1</span>
+                    </h3>
+                </div>
+                <div class="divider">&nbsp;</div>
+                <div>
+                    <div class="row">
+                        <div class="col-sm-4" style="padding-right: 6px;">
+	        	            <input type="number" class="form-control game-timer-minute-input" min="0" max="10"/>
+                        </div>
+                        <div class="col-sm-4" style="padding-right: 10px; padding-left: 10px;" min="0" max="59">
+	        	            <input type="number" class="form-control game-timer-seconds-input"/>
+                        </div>
+                        <div class="col-sm-4" style="padding-left: 5px;" min="0" max="9">
+	        	            <input type="number" class="form-control game-timer-milliseconds-input"/>
+                        </div>
+                    </div>
+		            <button type="button" class="btn btn-outline-primary btn-set-timer">Set Timer</button>
+                </div>
+                <div class="divider">&nbsp;</div>
+	    	    <button type="button" class="btn btn-outline-primary btn-start-timer">Start</button>
+    	    	<button type="button" class="btn btn-outline-primary btn-stop-timer">Stop</button>
+	        	<button type="button" class="btn btn-outline-primary">Poss Arrow</button>
+    	    </div>
+	        {%
+                include '@App/Game/controls-team.html.twig' with {
+                    team : game.visitorTeam,
+                    score: game.scores[game.visitorTeam.id],
+                }
+            %}
+	    </div>
+	</div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="/js/game-controls.js"></script>
+    <script src="/js/team-controls.js"></script>
+    <script src="/js/timer.js"></script>
+    <script src="/js/game-api.js"></script>
+
+    <script>
+        var game_api_event_url = '{{ path('game_event', { id : game.id}) }}';
+        var game_api_time_url = '{{ path('game_time', { id : game.id}) }}';
+    </script>
+{% endblock %}

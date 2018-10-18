@@ -1,0 +1,28 @@
+{% extends '@App/base.html.twig' %}
+
+{% block body %}
+    <div class="py-5 text-center">
+        <h2 style="font-family: Raleway">Create Game</h2>
+	</div>
+    {% include '@App/alert.html.twig' %}
+	<div class="row">
+	    <div class="col-sm-12">
+        {{ form_start(form) }}
+            <div class="form-group">
+                {{ form_row(form.homeTeamText) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.visitorTeamText) }}
+            </div>
+            <div class="form-group mt-3">
+                <button type="submit" class="btn btn-primary">
+                    Create
+                </button>
+            </div>
+        {{ form_end(form) }}
+	    </div>
+	</div>
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

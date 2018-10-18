@@ -1,0 +1,36 @@
+{% extends '@App/base.html.twig' %}
+
+{% block body %}
+    <div class="py-5 text-center">
+        <h2>{{ title }}</h2>
+	</div>
+    {% include '@App/alert.html.twig' %}
+	<div class="row">
+	    <div class="col-sm-12">
+        {{ form_start(form) }}
+            <div class="form-group">
+                {{ form_row(form.name) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.teamPlayers) }}
+                <div class="form-actions" style="margin-bottom: 20px;">
+                    <div class="actions-container text-left ">
+                        <a href="#" class="btn btn-default btn-sm pull-left add-collection-item" title="Add Player">
+                            Add Player
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <button type="submit" class="btn btn-primary">
+                    Add
+                </button>
+            </div>
+        {{ form_end(form) }}
+	    </div>
+	</div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="/js/team/create.js"></script>
+{% endblock %}

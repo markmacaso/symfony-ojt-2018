@@ -1,0 +1,36 @@
+<div class="row mb-2">
+    <div class="col-sm-4">
+        <h1><span class="badge badge-secondary span-team-score">{{ team1.name }} </span></h1>
+    </div>
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+        <h1><span class="badge badge-secondary span-team-score">{{ team2.name }} </span></h1>
+    </div>
+</div>
+<div class="row mb-2">
+    <div class="col-sm-4">
+        <h3>
+            Score <span class="badge badge-secondary span-team-score team-{{ team1.id }}">{{ scores[team1.id] }}</span>
+        </h3>
+        <h3>
+            Fouls <span class="badge badge-secondary span-team-fouls team-{{ team1.id}}">{{ fouls[team1.id] }}</span>
+        </h3>
+    </div>
+    <div class="col-sm-4">
+        <h3>
+            Timer <span class="badge badge-secondary span-game-timer"></span>
+        </h3>
+        <h3>
+            Period <span class="badge badge-secondary span-game-period">1</span>
+        </h3>
+    </div>
+    <div class="col-sm-4">
+        <h3>
+            Score <span class="badge badge-secondary span-team-score team-{{ team2.id }}">{{ scores[team2.id] }}</span>
+        </h3>
+        <h3>
+            Fouls <span class="badge badge-secondary span-team-fouls team-{{ team2.id }}">{{ fouls[team2.id] }}</span>
+        </h3>
+    </div>
+</div>
